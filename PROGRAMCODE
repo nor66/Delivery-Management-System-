@@ -1,0 +1,246 @@
+# Import datetime for handling date attributes
+from datetime import date
+from typing import List
+
+# Define the Customer class to represent a customer
+class Customer:
+    def __init__(self, customerID, firstName, lastName, phoneNumber, email, deliveryAddress):
+        self.__customerID = customerID  # Customer ID
+        self.__firstName = firstName    # Customer's first name
+        self.__lastName = lastName      # Customer's last name
+        self.__phoneNumber = phoneNumber  # Customer's phone number
+        self.__email = email            # Customer's email address
+        self.__deliveryAddress = deliveryAddress  # Delivery address for the customer
+    
+    # Setter and getter for customerID
+    def setCustomerID(self, customerID):
+        self.__customerID = customerID
+    
+    def getCustomerID(self):
+        return self.__customerID
+    
+    # Setter and getter for customerFirstName
+    def setCustomerFirstName(self, firstName):
+        self.__firstName = firstName
+    
+    def getCustomerFirstName(self):
+        return self.__firstName
+    
+    # Setter and getter for customerLastName
+    def setCustomerLastName(self, lastName):
+        self.__lastName = lastName
+    
+    def getCustomerLastName(self):
+        return self.__lastName
+    
+    # Setter and getter for phoneNumber
+    def setPhoneNumber(self, phoneNumber):
+        self.__phoneNumber = phoneNumber
+    
+    def getPhoneNumber(self):
+        return self.__phoneNumber
+    
+    # Setter and getter for email
+    def setEmail(self, email):
+        self.__email = email
+    
+    def getEmail(self):
+        return self.__email
+    
+    # Setter and getter for deliveryAddress
+    def setDeliveryAddress(self, address):
+        self.__deliveryAddress = address
+    
+    def getDeliveryAddress(self):
+        return self.__deliveryAddress
+    
+    # Method to place an order (stub method for now)
+    def placeOrder(self, orderDetails):
+        # Here, the function should handle placing the order
+        pass
+    
+    # Method to track the order (stub method for now)
+    def trackOrder(self, orderID):
+        # Here, the function should handle tracking an order by ID
+        pass
+    
+    # Method to confirm receipt of an order (stub method for now)
+    def confirmReceipt(self):
+        # Here, the function should confirm the receipt of the order
+        pass
+
+
+# Define the Order class to represent an order
+class Order:
+    def __init__(self, orderID, orderDate, deliveryDate, totalAmount, orderStatus):
+        self.__orderID = orderID                # Order ID
+        self.__orderDate = orderDate            # Date the order was placed
+        self.__deliveryDate = deliveryDate      # Date the order is to be delivered
+        self.__totalAmount = totalAmount        # Total amount of the order
+        self.__orderStatus = orderStatus        # Current status of the order (e.g., "Pending", "Shipped")
+    
+    # Setter and getter for orderID
+    def setOrderID(self, orderID):
+        self.__orderID = orderID
+    
+    def getOrderID(self):
+        return self.__orderID
+    
+    # Setter and getter for orderDate
+    def setOrderDate(self, orderDate):
+        self.__orderDate = orderDate
+    
+    def getOrderDate(self):
+        return self.__orderDate
+    
+    # Setter and getter for deliveryDate
+    def setDeliveryDate(self, deliveryDate):
+        self.__deliveryDate = deliveryDate
+    
+    def getDeliveryDate(self):
+        return self.__deliveryDate
+    
+    # Setter and getter for totalAmount
+    def setTotalAmount(self, totalAmount):
+        self.__totalAmount = totalAmount
+    
+    def getTotalAmount(self):
+        return self.__totalAmount
+    
+    # Setter and getter for orderStatus
+    def setOrderStatus(self, orderStatus):
+        self.__orderStatus = orderStatus
+    
+    def getOrderStatus(self):
+        return self.__orderStatus
+    
+    # Method to place an order (stub method for now)
+    def placeOrder(self, customer, items, payment):
+        # Here, the function should handle placing an order and associating with the customer and items
+        pass
+
+
+# Define the DeliveryNote class to represent a delivery note for an order
+class DeliveryNote:
+    def __init__(self, noteID, orderID, deliveryDate, customerFirstName, customerLastName, customerAddress, itemsOrdered):
+        self.__noteID = noteID                          # Delivery Note ID
+        self.__orderID = orderID                        # Associated Order ID
+        self.__deliveryDate = deliveryDate              # Date of delivery
+        self.__customerFirstName = customerFirstName    # Customer's first name
+        self.__customerLastName = customerLastName      # Customer's last name
+        self.__customerAddress = customerAddress        # Customer's delivery address
+        self.__itemsOrdered = itemsOrdered              # List of items in the order
+    
+    # Setter and getter for noteID
+    def setNoteID(self, noteID):
+        self.__noteID = noteID
+    
+    def getNoteID(self):
+        return self.__noteID
+    
+    # Setter and getter for orderID
+    def setOrderID(self, orderID):
+        self.__orderID = orderID
+    
+    def getOrderID(self):
+        return self.__orderID
+    
+    # Setter and getter for deliveryDate
+    def setDeliveryDate(self, deliveryDate):
+        self.__deliveryDate = deliveryDate
+    
+    def getDeliveryDate(self):
+        return self.__deliveryDate
+    
+    # Setter and getter for customerFirstName
+    def setCustomerFirstName(self, firstName):
+        self.__customerFirstName = firstName
+    
+    def getCustomerFirstName(self):
+        return self.__customerFirstName
+    
+    # Setter and getter for customerLastName
+    def setCustomerLastName(self, lastName):
+        self.__customerLastName = lastName
+    
+    def getCustomerLastName(self):
+        return self.__customerLastName
+    
+    # Setter and getter for customerAddress
+    def setCustomerAddress(self, address):
+        self.__customerAddress = address
+    
+    def getCustomerAddress(self):
+        return self.__customerAddress
+    
+    # Setter and getter for itemsOrdered
+    def setItemsOrdered(self, itemsOrdered):
+        self.__itemsOrdered = itemsOrdered
+    
+    def getItemsOrdered(self):
+        return self.__itemsOrdered
+    
+    # Method to generate a delivery note (stub method for now)
+    def generateDeliveryNote(self, order, customer, items):
+        # Here, the function should generate a delivery note based on the order, customer, and items
+        pass
+
+
+# Define the DeliveryStaff class to represent the delivery staff
+class DeliveryStaff:
+    def __init__(self, staffID, staffFirstName, staffLastName, assignedOrders):
+        self.__staffID = staffID                       # Staff ID
+        self.__staffFirstName = staffFirstName         # Staff first name
+        self.__staffLastName = staffLastName           # Staff last name
+        self.__assignedOrders = assignedOrders         # List of orders assigned to this staff member
+    
+    # Setter and getter for staffID
+    def setStaffID(self, staffID):
+        self.__staffID = staffID
+    
+    def getStaffID(self):
+        return self.__staffID
+    
+    # Setter and getter for staffFirstName
+    def setStaffFirstName(self, firstName):
+        self.__staffFirstName = firstName
+    
+    def getStaffFirstName(self):
+        return self.__staffFirstName
+    
+    # Setter and getter for staffLastName
+    def setStaffLastName(self, lastName):
+        self.__staffLastName = lastName
+    
+    def getStaffLastName(self):
+        return self.__staffLastName
+    
+    # Getter for assignedOrders
+    def getAssignedOrders(self):
+        return self.__assignedOrders
+    
+    # Method to assign an order to the delivery staff (stub method for now)
+    def assignOrder(self, order):
+        # Here, the function should assign an order to this delivery staff
+        pass
+    
+    # Method to process an order (stub method for now)
+    def processOrder(self, order):
+        # Here, the function should process the order (e.g., initiate delivery)
+        pass
+    
+    # Method to update delivery status (stub method for now)
+    def updateDeliveryStatus(self, order, status):
+        # Here, the function should update the delivery status of the order
+        pass
+
+
+# Example usage
+customer1 = Customer("C001", "John", "Doe", "123456789", "john.doe@example.com", "123 Main St")
+order1 = Order("O001", date(2025, 3, 1), date(2025, 3, 3), 150.0, "Pending")
+deliveryNote1 = DeliveryNote("N001", "O001", date(2025, 3, 3), "John", "Doe", "123 Main St", ["Item1", "Item2"])
+deliveryStaff1 = DeliveryStaff("S001", "Alice", "Smith", [order1])
+
+# Output some information about the customer and order
+print(customer1.getCustomerFirstName(), customer1.getCustomerLastName())
+print(order1.getOrderStatus())
